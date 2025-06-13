@@ -1,0 +1,42 @@
+:root {
+    /* Cores */
+    --color-primary: #0F2EEA;
+    --color-secondary: #FF872C;
+
+    --color-success: #4CAF50;
+    --color-success-light: #A5D6A7;
+
+    --color-attention: #E83F5B;
+    --color-attention-light: #FFCDD2;
+
+    --color-background: #F0F0F0;
+    --color-error: #B00200;
+    --color-text: #000000;
+    --color-text-light: #888888;
+    --color-shape: #FFFFFF;
+
+    /* Fontes */
+    --font-medium: 'Poppins_500Medium';
+    --font-regular: 'Poppins_400Regular';
+    --font-bold: 'Poppins_700Bold';
+    --font-black: 'Poppins_900Black';
+
+    /* Espaçamentos */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+    --spacing-xlarge: 32px;
+
+    /* Bordas arredondadas */
+    --radius-small: 4px;
+    --radius-medium: 8px;
+    --radius-large: 16px;
+    --radius-xlarge: 32px;
+
+    /* Tamanhos de fonte */
+    --font-size-small: 14px;
+    --font-size-medium: 18px;
+    --font-size-large: 22px;
+    --font-size-xlarge: 26px;
+    --font-size-xxlarge: 30px;
+}
