@@ -1,0 +1,213 @@
+/* Modal Overlay */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px; /* Bordas mais arredondadas */
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Sombra mais pronunciada */
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #f8f9fa;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.modal-content input:focus {
+  outline: none;
+  background: #fff;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(84, 41, 204, 0.15);
+}
+
+/* Transaction Type Buttons - Melhorias significativas */
+.transaction-type {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.type-button {
+  flex: 1;
+  padding: 1.1rem;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.type-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.type-button:hover::before {
+  opacity: 1;
+}
+
+.type-button.entrada {
+  background: linear-gradient(145deg, #e6f9ec, #c8f0d4);
+  color: #2d7a3b;
+  border: 1px solid #b8e6c5;
+}
+
+.type-button.saida {
+  background: linear-gradient(145deg, #fcebea, #f8d7d5);
+  color: #c0392b;
+  border: 1px solid #f5c5c1;
+}
+
+/* Active State for Buttons - Design aprimorado */
+.type-button.active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.type-button.entrada.active {
+  background: linear-gradient(145deg, #2d7a3b, #1e5c2a);
+  color: white;
+  border: 1px solid #1e5c2a;
+}
+
+.type-button.saida.active {
+  background: linear-gradient(145deg, #c0392b, #a03124);
+  color: white;
+  border: 1px solid #a03124;
+}
+
+/* Ícones com efeito especial */
+.type-button i {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.type-button.active i {
+  transform: scale(1.15);
+}
+
+/* Animação de pulse para estado ativo */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(45, 122, 59, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(45, 122, 59, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(45, 122, 59, 0); }
+}
+
+.type-button.entrada.active {
+  animation: pulse 1.5s ease;
+}
+
+/* Cadastrar Button - Design aprimorado */
+.btn-cadastrar {
+  width: 100%;
+  padding: 1.1rem;
+  background: linear-gradient(to right, #6933ff, #5429cc);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(105, 51, 255, 0.25);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cadastrar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-cadastrar:hover::before {
+  left: 100%;
+}
+
+.btn-cadastrar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(105, 51, 255, 0.3);
+}
+
+.btn-cadastrar:active {
+  transform: translateY(0);
+}
+
+/* Close Button - Design aprimorado */
+.btn-fechar-modal {
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+  border: none;
+  background: #f0f2f5;
+  color: #666;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-fechar-modal:hover {
+  background: #5429cc;
+  color: white;
+  transform: rotate(90deg);
+}

@@ -1,88 +1,176 @@
-header {
-
-    padding: 0;
-    background-color: #2f47e6;
-    color: #ffffff;
-    margin: 0 auto;
-    display: flex;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-
-
-}
-header a {
-    border-radius: 10px;
-    text-decoration: none;
-    max-width: 150px;
-    max-height: 25px;
-    background-color: #6b7efc;
-    color: #ffffff;
-    font-size: 15px;
-    padding: 10px 20px;
-    margin: 250px ;
-}
-
+/* RESET GERAL */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-
+    background-color: #f0f2f5;
 }
 
-main {
-    background-color: #bbbbbb;
-   
+/* HEADER */
+/* Header */
+header {
+    background-color: #2f55a4; /* tom de azul do header */
+    padding: 2rem 1rem 10rem; /* padding inferior maior por causa da sobreposição dos cards */
+    color: white;
 }
 
-#perfil {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin: 250px;
-}
-
-.username {
-    margin-top: 75px;
-    font-size: 20px;
-    color: #ffffff;
-    margin-left: 20px;
-  
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
-
-    border-radius: 10px;
-}
-#conteiner-cards{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 35px;
- 
-   
-}
-.cards{
-    background-color: #ffffff;
-    border: solid 1px #000000;
-    width: 350px;
-    height: 200px;
-    border-radius: 15px;
-    padding: 15px;
-
-
-}
-.title-cards {
-    font-size: 20px;
-    color: #000000;
-    margin-left: 10px;
-    margin-top: 10px;
+.header-content {
+    max-width: 1120px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-info .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.greeting span {
+    display: block;
+    font-size: 1rem;
+    color: #dcdcdc;
+}
+
+.greeting strong {
+    font-size: 1.125rem;
+    color: white;
+}
+
+.btn-nova-transacao {
+    background-color: #6933ff;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-nova-transacao:hover {
+    background-color: #5a28d7;
+}
+
+
+/* CARDS */
+#conteiner-cards {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    position: relative;
+    top: -100px;
+    z-index: 10;
+}
+
+.cards {
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 300px;
+    height: 160px;
+    padding: 20px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+}
+
+.title-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.money-cards {
+    margin-top: 20px;
+}
+
+.money-cards p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.info-text {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #888888;
+}
+
+/* ÍCONES COLORIDOS */
+.icon-up {
+    color: green;
+    font-size: 20px;
+}
+
+.icon-down {
+    color: red;
+    font-size: 20px;
+}
+
+.icon-total {
+    color: white;
+    font-size: 20px;
+}
+
+/* CARD LARANJA */
+.total-card {
+    background-color: #ffa726;
+    color: white;
+}
+
+.total-card .info-text {
+    color: #fff8e1;
+}
+
+/* TABELA DE TRANSAÇÕES */
+.transactions-table {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.transactions-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transactions-table th {
+    text-align: left;
+    padding: 1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.transactions-table td {
+    padding: 1rem;
+    color: #333;
+    border-top: 1px solid #dad8d8;
+}
+
+.transactions-table .income {
+    color: rgb(0, 121, 0);
+    font-weight: 600;
+}
+
+.transactions-table .outcome {
+    color: rgb(243, 1, 1);
+    font-weight: 600;
 }
