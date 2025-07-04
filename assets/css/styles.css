@@ -174,3 +174,16 @@ header {
     color: rgb(243, 1, 1);
     font-weight: 600;
 }
+/* Fundo suave na linha inteira */
+.transactions-table tr.entrada {
+  background-color: rgba(0, 121, 0, 0.05);  /* verde bem suave */
+}
+
+.transactions-table tr.saida {
+  background-color: rgba(243, 1, 1, 0.05);  /* vermelho bem suave */
+}
+
+/* Opcional: hover para melhorar legibilidade */
+.transactions-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
